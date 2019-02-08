@@ -11,23 +11,15 @@ namespace StateSales
     class Program
     {
         static void Main(string[] args)
-        {
-            var stateSales = new StringDictionary();
-            
-            stateSales.Add("OH", 90416);
-            stateSales.Add("KY", 77408);
-            stateSales.Add("IN", 16588);
-            stateSales.Add("PA", 55043);
-            stateSales.Add("MI", 60099);
-            stateSales.Add("NY", 19830);
-            stateSales.Add("IL", 81154);
-            stateSales.Add("WI", 11679);
-            stateSales.Add("MN", 94207);
-            stateSales.Add("MS", 93521);
+        {  // namespace  .  class     variable = 
+            StateSalesLibrary.StateSalesLibrary pgm = new StateSalesLibrary.StateSalesLibrary();
 
 
+            var total = pgm.Get("IN") + pgm.Get("NY") + pgm.Get("MN");
+            Console.WriteLine($"Sales for IN, NY, & MN are {total}");
 
-            Console.WriteLine($"The person with Key # 42 is {stateSales.Get(42)}");
+            total = pgm.Get("KY") + pgm.Get("MI") + pgm.Get("PA") + pgm.Get("IL");
+            Console.WriteLine($"Sales for KY, MI, PA, & IL are {total}");
 
         }
        
